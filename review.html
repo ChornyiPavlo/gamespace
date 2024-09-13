@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Space Expedition Pin up">
+    <meta name="description" content="Space Expedition Pin up - bilgisayar oyununda yeni bir deneyim.">
+    <title>Space Expedition Pin up</title>
+    <link rel="stylesheet" href="styles.css">
+
+  <style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: #1c1c1e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.hero-section, .story-section, .features-section, .cta-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.image-placeholder {
+    background-color: #ccc;
+    width: 100%;
+    height: 200px;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #ff3b3b;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d93636;
+}
+
+.footer {
+    background-color: #1c1c1e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section, .story-section, .features-section, .cta-section {
+        padding: 40px 0;
+    }
+
+    .image-placeholder {
+        height: 150px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section, .story-section, .features-section, .cta-section {
+        padding: 30px 0;
+    }
+
+    .image-placeholder {
+        height: 100px;
+    }
+
+    .cta-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(20% - 20px); /* Ширина для пяти элементов */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #333;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Адаптивный дизайн для планшетов */
+@media (max-width: 992px) {
+    .feature-item {
+        width: calc(33.333% - 20px); /* Три элемента в ряд */
+    }
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+    .feature-item {
+        width: calc(50% - 20px); /* Два элемента в ряд */
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-item {
+        width: 100%; /* Один элемент в ряд */
+    }
+}
+
+
+.details-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.details-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.detail-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.detail-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detail-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.detail-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 992px) {
+    .detail-item {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .detail-item {
+        width: 100%;
+    }
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: #1c1c1e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.nav {
+    background-color: #333;
+    padding: 15px 0;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    color: #ff3b3b;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    background-color: #e3f2fd;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-image {
+    width: 45%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Story Section */
+.story-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.story-text {
+    width: 50%;
+}
+
+.story-image {
+    width: 45%;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Адаптивный дизайн для небольших экранов */
+@media (max-width: 768px) {
+    .hero-text, .hero-image,
+    .story-text, .story-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+}
+
+
+
+/* Mission Section */
+.mission-section {
+    padding: 60px 0;
+    background-color: #eef1f5;
+}
+
+.mission-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mission-text {
+    width: 50%;
+}
+
+.mission-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mission-text ul li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.mission-text ul li::before {
+    content: "✔";
+    color: #28a745;
+    margin-right: 10px;
+}
+
+.mission-image {
+    width: 45%;
+}
+
+.mission-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 992px) {
+    .mission-text {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .mission-image {
+        width: 100%;
+    }
+
+    .mission-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .mission-section {
+        padding: 40px 0;
+    }
+
+    .mission-text ul li {
+        font-size: 16px;
+    }
+}
+
+/* Адаптивность для небольших экранов */
+@media (max-width: 480px) {
+    .mission-section {
+        padding: 30px 0;
+    }
+
+    .mission-text ul li {
+        font-size: 14px;
+    }
+
+    .mission-image img {
+        border-radius: 5px;
+    }
+}
+
+
+
+/* Levels Section */
+.levels-section {
+    padding: 60px 0;
+    background-color: #f4f7fb;
+    text-align: center;
+}
+
+.levels-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.level-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(25% - 20px); /* Четыре элемента в ряд */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.level-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.level-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.level-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.level-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 992px) {
+    .level-item {
+        width: calc(50% - 20px); /* Два элемента в ряд */
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .level-item {
+        width: 100%; /* Один элемент в ряд */
+    }
+
+    .levels-section {
+        padding: 40px 0;
+    }
+
+    .level-item h3 {
+        font-size: 18px;
+    }
+
+    .level-item p {
+        font-size: 14px;
+    }
+}
+
+/* Адаптивность для небольших экранов */
+@media (max-width: 480px) {
+    .levels-section {
+        padding: 30px 0;
+    }
+
+    .level-item h3 {
+        font-size: 16px;
+    }
+
+    .level-item p {
+        font-size: 13px;
+    }
+}
+
+.cta-button {
+    background-color: #ff3b3b;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 20px; /* Для добавления отступа от текста */
+}
+
+.cta-button:hover {
+    background-color: #d93636;
+}
+
+/* Адаптивные настройки для кнопки */
+@media (max-width: 768px) {
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Cookies Agreement Styles */
+.cookies-agreement {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1c1c1e;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none; /* Скрыт по умолчанию */
+}
+
+.cookies-agreement p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cookies-agreement a {
+    color: #ff3b3b;
+    text-decoration: none;
+}
+
+.cookies-agreement a:hover {
+    text-decoration: underline;
+}
+
+.cookies-agreement button {
+    background-color: #ff3b3b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.cookies-agreement button:hover {
+    background-color: #d93636;
+}
+
+
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Space Expedition Pin up: Galaksiler Arası Macera</h1>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#hero">Ana Sayfa</a></li>
+                <li><a href="#story">Hikaye</a></li>
+                <li><a href="#features">Özellikler</a></li>
+                <li><a href="#details">Detaylar</a></li>
+                <li><a href="#cta">Başla</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+<main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="img/6_1.jpg" alt="Uzay Macerası">
+                </div>
+                <div class="hero-text">
+                    <h2>Uzay Macerasına Hazır mısınız?</h2>
+                    <p>Space Expedition Pin up, sizi evrenin en uzak köşelerine götürecek destansı bir yolculuğa çıkarıyor. Galaksiler arası savaşlar, gizemli gezegenler ve unutulmaz karakterlerle dolu bir maceraya adım atın.</p>
+                    <!-- Кнопка в Hero Section -->
+                    <a href="#details" class="cta-button">Daha fazla ayrıntı burada</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Pin up ile Başlayan Yolculuk</h2>
+                    <p>Pin up serisinin en yeni oyunlarından biri olan Space Expedition, sizi sadece eğlendirmekle kalmayacak, aynı zamanda galaksinin kaderini belirleyeceğiniz bir lider olmanızı sağlayacak. Oyunun başlangıcı, kahramanımızın Pin up adlı bir uzay gemisinde göreve başladığı anla başlıyor. Bu gemi, galaksinin en güçlü ve teknolojik açıdan gelişmiş gemilerinden biridir.</p>
+                    <p>Bir gün, Pin up gemisi, galaksinin derinliklerinden gelen bir yardım sinyali alır. Ekip, hiç vakit kaybetmeden sinyalin geldiği gezegene doğru yola çıkar. Bu noktada, oyuncular uzay gemisini kontrol etmeye başlar ve heyecan dolu bir maceraya atılırlar.</p>
+                    <!-- Кнопка в Story Section -->
+                    <a href="#details" class="cta-button">Daha fazla ayrıntı burada</a>
+                </div>
+                <div class="story-image">
+                    <img src="img/2.jpg" alt="Pin up Uzay Gemisi">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Oyun Özellikleri</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="img/3.jpg" alt="Pin up gemisi keşif">
+                        <p>Pin up gemisi ile uzayda keşif yapma şansı</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="img/4.jpg" alt="Galaksiler arası savaşlar">
+                        <p>Galaksiler arası savaşlar ve destansı çatışmalar</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="img/5.jpg" alt="Yeni görevler ve sürprizler">
+                        <p>Birbirinden farklı gezegenlerde yeni görevler ve sürprizler</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="img/6.jpg" alt="Gelişmiş silah sistemleri">
+                        <p>Gelişmiş silah ve savunma sistemleri</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="img/7.jpeg" alt="Stratejik kararlar alma">
+                        <p>Uzay ekibiniz ile stratejik kararlar alma</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission-section">
+        <div class="container">
+            <h2>Oyun Misyonu ve Hedefler</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>Space Expedition Pin up oyununda, galaksiler arası barışı sağlamak için kritik bir görevi üstleniyorsunuz. Oyuncular olarak, uzayın derinliklerinde kaybolmuş bir gezegeni keşfetmeli ve orada bulunan gizemli bir medeniyetin yardım sinyaline yanıt vermelisiniz.</p>
+                    <p>Görev süresince şunları yapmanız gerekiyor:</p>
+                    <ul>
+                        <li><strong>Keşif yapın:</strong> Pin up gemisini kullanarak yeni gezegenleri ve galaktik sistemleri keşfedin.</li>
+                        <li><strong>Düşmanlarla savaşın:</strong> Galaksiyi tehdit eden karanlık kuvvetlere karşı mücadele edin.</li>
+                        <li><strong>Görevleri tamamlayın:</strong> Gizemli sinyallerin kaynağını bulun ve gezegenin gizemlerini çözün.</li>
+                        <li><strong>Stratejik kararlar alın:</strong> Ekip üyeleriyle iş birliği yaparak stratejik kararlar verin ve galaksinin kaderini belirleyin.</li>
+                        <li><strong>Gemi ve ekipmanınızı geliştirin:</strong> Görevlerde başarılı oldukça geminizi ve ekipmanlarınızı yükseltin, daha güçlü silah ve savunma sistemleri geliştirin.</li>
+                    </ul>
+                    <p>Bu zorlu görevleri tamamlayarak galaksiyi karanlık güçlerin elinden kurtarabilir ve uzaydaki dengeyi yeniden sağlayabilirsiniz. Unutmayın, her kararınız galaksinin geleceğini şekillendirecek.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="img/9_1.jpg" alt="Uzay görevi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Levels Section -->
+<section class="levels-section">
+    <div class="container">
+        <h2>Oyun Seviyeleri</h2>
+        <div class="levels-grid">
+            <div class="level-item">
+                <img src="img/10.jpg" alt="Seviye 1: Keşif Başlangıcı">
+                <h3>Seviye 1: Keşif Başlangıcı</h3>
+                <p>İlk seviye, Pin up gemisinin evrenin keşfedilmemiş köşelerine adım atmasıyla başlar. Oyuncular, başlangıçta temel mekanikleri öğrenir ve ilk düşmanlarıyla karşılaşırlar.</p>
+            </div>
+            <div class="level-item">
+                <img src="img/11.jpg" alt="Seviye 2: Galaktik Savaşlar">
+                <h3>Seviye 2: Galaktik Savaşlar</h3>
+                <p>Bu seviyede, oyuncular farklı gezegenlerde savaşlar yapacak ve galaksiler arası düşmanlarla mücadele edecektir. Yeni silahlar ve stratejiler burada devreye girer.</p>
+            </div>
+            <div class="level-item">
+                <img src="img/12.jpeg" alt="Seviye 3: Gizemli Gezegende Görev">
+                <h3>Seviye 3: Gizemli Gezegende Görev</h3>
+                <p>Bu seviyede oyuncular, bilinmeyen bir gezegene iniş yapar ve tehlikeli görevleri üstlenir. Bu bölümde gizemler ve sürpriz düşmanlar keşfedilir.</p>
+            </div>
+            <div class="level-item">
+                <img src="img/13.png" alt="Seviye 4: Galaksinin Son Savaşı">
+                <h3>Seviye 4: Galaksinin Son Savaşı</h3>
+                <p>Final seviyesinde oyuncular, galaksiyi kurtarmak için son bir savaşa katılır. Bu, oyunun en zorlu ve destansı bölümüdür. Pin up ekibi kaderini burada belirler.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- Graphics, Sound, and Characters Section -->
+        <section id="details" class="details-section">
+            <div class="container">
+                <h2>Oyun Dünyasının Detayları</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <img src="img/14.jpg" alt="Grafik Kalitesi">
+                        <h3>Grafik Kalitesi</h3>
+                        <p>Space Expedition Pin up, etkileyici grafik tasarımı ile oyuncuları kendine hayran bırakıyor.</p>
+                    </div>
+                    <div class="detail-item">
+                        <img src="img/15.jpg" alt="Ses ve Müzik Tasarımı">
+                        <h3>Ses ve Müzik Tasarımı</h3>
+                        <p>Oyunda kullanılan ses efektleri ve müzikler, uzayın gizemli atmosferini yansıtıyor.</p>
+                    </div>
+                    <div class="detail-item">
+                        <img src="img/16.jpg" alt="Karakterler">
+                        <h3>Unutulmaz Karakterler</h3>
+                        <p>Space Expedition Pin up, farklı yeteneklere sahip unutulmaz karakterlerle dolu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <h2>Pin up ile Galaksiyi Kurtarın!</h2>
+                <p>Space Expedition Pin up, sizi galaksiler arası savaşlara katılmaya davet ediyor. Şimdi maceraya katılma zamanı!</p>
+                <a href="#" class="cta-button">Oynamaya Başla</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Space Expedition Pin up. Tüm hakları saklıdır. | Azerbaijan,Baku, Nasimi district, Alimardan-bek Topchubashev 11 | (+99450) 616-26-08 | contact@pin-up.spaceexpedition.com </p>
+        </div>
+    </footer>
+
+
+<!-- Cookies Agreement Section -->
+<div id="cookies-agreement" class="cookies-agreement">
+    <div class="container">
+        <p>Bu site, kullanıcı deneyimini geliştirmek için çerezler kullanır. Çerezleri kabul ederek, siteyi kullanmaya devam edersiniz. Daha fazla bilgi için <a href="#privacy-policy">Gizlilik Politikası</a> sayfamızı ziyaret edin.</p>
+        <button id="accept-cookies" class="cta-button">Kabul Ediyorum</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cookiesAgreement = document.getElementById('cookies-agreement');
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+    
+    // Проверяем, есть ли уже согласие
+    if (!localStorage.getItem('cookiesAccepted')) {
+        cookiesAgreement.style.display = 'block';
+    }
+    
+    // Обработчик для кнопки принятия
+    acceptCookiesButton.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookiesAgreement.style.display = 'none';
+    });
+});
+</script>
+
+
+</body>
+</html>
