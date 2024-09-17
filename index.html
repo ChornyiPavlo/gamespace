@@ -245,12 +245,9 @@
         const cookiesAgreement = document.getElementById('cookies-agreement');
         const acceptCookiesButton = document.getElementById('accept-cookies');
 
-        // Проверяем, есть ли уже согласие
         if (!localStorage.getItem('cookiesAccepted')) {
             cookiesAgreement.style.display = 'block';
         }
-
-        // Обработчик для кнопки принятия
         acceptCookiesButton.addEventListener('click', function () {
             localStorage.setItem('cookiesAccepted', 'true');
             cookiesAgreement.style.display = 'none';
